@@ -1,6 +1,10 @@
-from my_app import create_app
+from flask import Flask
 
-app = create_app()
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
